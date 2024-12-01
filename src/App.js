@@ -4,8 +4,10 @@ import { ToggleButton } from "./components/ToggleButton";
 import { Folders } from "./components/Folders";
 import { Folder } from "./components/Folder";
 import { Note } from "./components/Note";
+import {useSelector} from 'react-redux'
 
 function App() {
+  const primaryColor = useSelector((state) => state.primaryColor)
   const [allFoldersVisible, setAllFoldersVisible] = useState(true);
 
   const toggleAllFoldersVisiblity = () => {
@@ -13,7 +15,7 @@ function App() {
   };
 
   return (
-    <div className="app">
+    <div className="app" style={{"--primary-color": `${primaryColor}`}}>
       <div id="top-bar">
         <MacButtons />
         <ToggleButton
