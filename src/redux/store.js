@@ -1,9 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-import primaryColorReducer from './primaryColorSlice';
+import primaryColorReducer from './primaryColorSlice.js';
+import dataSliceReducer from './dataSlice.js'
+import selectedFolderReducer from './selectedFolderSlice.js';
+
 
 const store = configureStore({
   reducer: {
     primaryColor: primaryColorReducer,
+    dataSlice: dataSliceReducer,
+    selectedFolder: selectedFolderReducer,
   },
 });
 
