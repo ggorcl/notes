@@ -27,6 +27,7 @@
   border-radius: 15px; /* Rounded corners for smooth design */
   overflow: hidden;
   display: flex;
+  position: relative;
 }
 
 #top-bar{
@@ -36,6 +37,7 @@
   align-items: center;
   background-color: rgba(0, 0, 0, 0.1);
   position: absolute;
+  z-index: 10;
 }
 
 .mac-buttons {
@@ -124,7 +126,7 @@
 .section{
   width: 100%;
   height: 100%;
-  transition: width var(--toggle-time) ease;
+  transition: all var(--toggle-time) ease;
   color: #fefefe;
   padding-top: 48px;
 }
@@ -135,18 +137,28 @@
 
 .folders-container{
   background-color: #242424;
+  flex: 1;
 }
 
 .folder-container{
   background-color: #1B1B1B;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  left: 25%;
 }
 
 .note-container{
   background-color: #1E1E1E;
+  position: absolute;
+  width: 50%;
+  top: 0;
+  right: 0;
 }
 
 .folder-item{
-  width: 100%;
+  width: calc(25% - 1.5em);
   height: 2em;
   border: 1px solid red;
   display: flex;
