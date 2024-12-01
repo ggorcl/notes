@@ -1,7 +1,9 @@
 import React  from "react";
 import { useState } from "react";
+import { useSelector } from 'react-redux';
 
-export function ToggleButton({primaryColor="red", toggleAllFoldersVisiblity}){
+export function ToggleButton({toggleAllFoldersVisiblity}){
+    const primaryColor = useSelector((state) => state.primaryColor);
     const [isToggled, setIsToggled] = useState(false);
 
     const handleToggle = () => {

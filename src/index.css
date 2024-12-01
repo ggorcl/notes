@@ -94,7 +94,7 @@
   width: 59px;
   height: 29px;
   border-radius: 15px;
-  background-color: #ccc;
+  background-color: #fefefe;
   position: relative;
   cursor: pointer;
   border: 1px solid #cecece;
@@ -160,8 +160,6 @@
 .folder-item{
   width: calc(25% - 1.5em);
   height: 2em;
-  border: 1px solid red;
-  background-color: red;
   border-radius: 12px;
   display: flex;
   justify-content: space-between;
@@ -175,8 +173,11 @@
   align-items: center;
 }
 
-.note-heading{
-  color: wheat;
+.note-divider {
+  width: 80%; /* Adjust width as needed */
+  border: none;
+  border-top: 1px solid #ccc; /* Color and thickness of the divider */
+  margin: 10px 0; /* Spacing before and after the line */
 }
 
 .note-content{
@@ -187,6 +188,7 @@
   font-size: 16px;
   line-height: 1.5;
   padding: 10px;
+  padding-top: 2em;
   border-radius: 8px;
   /* border: 0.1em solid #ccc; */
   resize: none; /* Disable manual resizing */

@@ -17,7 +17,6 @@ function App() {
       <div id="top-bar">
         <MacButtons />
         <ToggleButton
-          primaryColor="#E49273"
           toggleAllFoldersVisiblity={toggleAllFoldersVisiblity}
         />
       </div>
