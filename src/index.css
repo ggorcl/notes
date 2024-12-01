@@ -1,13 +1,155 @@
-body {
+*, *::before, *::after{
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root{
+  --toggle-time: 0.4s;
+}
+
+#root{
+  background-color: #F2EFE9;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.app {
+  width: 70%;
+  height: 80%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle white border for a glass edge */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Depth with a darker shadow */
+  border-radius: 15px; /* Rounded corners for smooth design */
+  overflow: hidden;
+  display: flex;
+}
+
+#top-bar{
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+}
+
+.mac-buttons {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between buttons */
+  padding: 10px;
+}
+
+.mac-button {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%; /* Make it circular */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border for depth */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Light shadow for realism */
+  cursor: pointer; /* Indicates interactivity */
+}
+
+.mac-close-button{
+  background: radial-gradient(circle, #ff5f57, #e0443e); /* Mac-like red gradient */
+}
+
+.mac-close-button:hover{
+  background: radial-gradient(circle, #ff7b72, #e0443e); /* Slightly brighter on hover */
+}
+
+.mac-minimize-button{
+  background: radial-gradient(circle, #ffbd2e, #e0a700);
+}
+
+.mac-minimize-button:hover{
+  background: radial-gradient(circle, #ffd249, #e0a700);
+}
+
+.mac-maximize-button{
+  background: radial-gradient(circle, #27c93f, #1aab29);
+}
+
+.mac-maximize-button:hover{
+  background: radial-gradient(circle, #5fe153, #1aab29);
+}
+
+/* Basic styling for the toggle container */
+.toggle-container {
+  padding-left: 2rem;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+/* Style for the rectangular toggle button */
+.toggle-button {
+  width: 59px;
+  height: 29px;
+  border-radius: 15px;
+  background-color: #ccc;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid #cecece;
+  transition: background-color 0.3s;
+}
+
+/* The toggle indicator inside the button */
+.toggle-indicator {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #F2EFE9;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: transform var(--toggle-time);
+}
+
+/* When the toggle is ON, move the indicator to the right */
+.toggle-indicator.on {
+  transform: translateX(30px);
+}
+
+/* When the toggle is OFF, leave the indicator on the left */
+.toggle-indicator.off {
+  transform: translateX(0);
+}
+
+.section{
+  width: 100%;
+  height: 100%;
+  transition: width var(--toggle-time) ease;
+  color: #fefefe;
+  padding-top: 48px;
+}
+
+.section div:first-of-type{
+  padding: 1em;
+}
+
+.folders-container{
+  background-color: #242424;
+}
+
+.folder-container{
+  background-color: #1B1B1B;
+}
+
+.note-container{
+  background-color: #1E1E1E;
+}
+
+.folder-item{
+  width: 100%;
+  height: 2em;
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

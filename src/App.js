@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { MacButtons } from "./components/MacButtons";
+import { ToggleButton } from "./components/ToggleButton";
+import { Folders } from "./components/Folders";
+import { Folder } from "./components/Folder";
+import { Note } from "./components/Note";
 
 function App() {
+  const [allFoldersVisible, setAllFoldersVisible] = useState(true);
+
+  const toggleAllFoldersVisiblity = () => {
+    setAllFoldersVisible(prev => !prev)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div id="top-bar">
+        <MacButtons />
+        <ToggleButton primaryColor="#E49273" toggleAllFoldersVisiblity={toggleAllFoldersVisiblity}/>
+      </div>
+      <div className="folders-container section" style={allFoldersVisible ? {width: "100%"} : {width: "0%"}}>
+        <Folders/>
+      </div>
+      <div className="folder-container section">
+        <Folder/>
+      </div>
+      <div className="note-container section">
+        <Note/>
+      </div>
     </div>
   );
 }
