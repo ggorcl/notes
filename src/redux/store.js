@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import primaryColorReducer from './primaryColorSlice.js';
 import dataSliceReducer from './dataSlice.js'
 import selectedFolderReducer from './selectedFolderSlice.js';
+import selectedNoteReducer from './selectedNoteSlice.js';
 
 
 const store = configureStore({
@@ -9,6 +10,7 @@ const store = configureStore({
     primaryColor: primaryColorReducer,
     dataSlice: dataSliceReducer,
     selectedFolder: selectedFolderReducer,
+    selectedNote: selectedNoteReducer
   },
 });
 

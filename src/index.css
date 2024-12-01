@@ -210,3 +210,32 @@
 .note-content::selection{
   background: var(--primary-color);
 }
+
+.note-item{
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  transition: all var(--animation-time) ease;
+  border-radius: 15px;
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+
+.note-item:hover{
+  background-color: var(--primary-color);
+}
+
+.note-item-title{
+  font-size: large;
+  font-weight: bold;
+}
+
+.note-item-main{
+  font-size: medium;
+  font-weight: lighter;
+  margin-top: 0.5em;
+}
+
+.note-item-content{
+  padding-left: 1em;
+}
