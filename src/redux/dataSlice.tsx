@@ -1,4 +1,4 @@
-import { createSlice, current, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface Note {
   time: string;
@@ -8,6 +8,7 @@ interface Note {
 
 const initialState: { [key: string]: Note[] } = {
   "New Folder 1": [
+    { title: "New Note", content: "", time: new Date().getFullYear().toString() }
   ]
 };
 
