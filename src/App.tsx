@@ -4,10 +4,11 @@ import { ToggleButton } from "./components/ToggleButton";
 import { Folders } from "./components/Folders";
 import { Folder } from "./components/Folder";
 import { Note } from "./components/Note";
-import {useSelector} from 'react-redux'
+import { useSelector } from 'react-redux'
+import { RootState } from './redux/store'
 
 function App() {
-  const primaryColor = useSelector((state) => state.primaryColor)
+  const primaryColor = useSelector((state: RootState) => state.primaryColor)
   const [allFoldersVisible, setAllFoldersVisible] = useState(true);
 
   const toggleAllFoldersVisiblity = () => {
@@ -15,7 +16,7 @@ function App() {
   };
 
   return (
-    <div className="app" style={{"--primary-color": `${primaryColor}`}}>
+    <div className="app" style={{ "--primary-color": `${primaryColor}` } as React.CSSProperties}>
       <div id="top-bar">
         <MacButtons />
         <ToggleButton
@@ -27,10 +28,10 @@ function App() {
       >
         <Folders />
       </div>
-      <div className="folder-container section" style={allFoldersVisible ? {width: "25%", left: "25%"} : {width: "30%", left: "0"}}>
+      <div className="folder-container section" style={allFoldersVisible ? { width: "25%", left: "25%" } : { width: "30%", left: "0" }}>
         <Folder />
       </div>
-      <div className="note-container section" style={allFoldersVisible ? {width: "50%"} : {width: "70%"}}>
+      <div className="note-container section" style={allFoldersVisible ? { width: "50%" } : { width: "70%" }}>
         <Note />
       </div>
     </div>

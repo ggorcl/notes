@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 const selectedNoteSlice = createSlice({
   name: 'selectedNote',
-  initialState: '0',
+  initialState: 0,
   reducers: {
     setSelectedNote: (state, action) => {
       return action.payload;
