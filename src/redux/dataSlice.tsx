@@ -6,9 +6,7 @@ interface Note {
   content: string;
 }
 
-type DataSliceState = Record<string, Note[]>;
-
-const initialState: DataSliceState = {
+const initialState: { [key: string]: Note[] } = {
   folder1: [
     {
       time: "10:00 AM",
@@ -44,9 +42,13 @@ const dataSlice = createSlice({
       if (state[folder] && state[folder][index]) {
         state[folder][index].content = newContent;
       }
+    },
+    addFolder: (state, action: PayloadAction<void>) => {
+      const totalFolders = Object.keys(state).length;
+      state[`New Folder ${totalFolders + 1}`] = []
     }
   },
 });
 
-export const { updateDataSlice } = dataSlice.actions;
+export const { updateDataSlice, addFolder } = dataSlice.actions;
 export default dataSlice.reducer;

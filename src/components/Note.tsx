@@ -16,7 +16,7 @@ export function Note() {
         <div className="note">
             <h3 className="note-heading" style={{ color: `${primaryColor}` }}>{new Date().toUTCString().toString()}</h3>
             <hr className="note-divider" />
-            <textarea value={dataSlice[selectedFolder][selectedNote]?.content} className="note-content" onChange={(e) => handleUpdate(e.target.value)}></textarea>
+            <textarea value={dataSlice && dataSlice[selectedFolder] && dataSlice[selectedFolder][selectedNote]?.content} className="note-content" onChange={(e) => handleUpdate(e.target.value)}></textarea>
         </div>
     )
 }

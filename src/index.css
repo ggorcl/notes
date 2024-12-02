@@ -35,7 +35,7 @@
   height: 48px;
   display: flex;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.9);
   position: absolute;
   z-index: 10;
 }
@@ -129,6 +129,7 @@
   transition: all var(--animation-time) ease;
   color: #fefefe;
   padding-top: 48px;
+  overflow-y: scroll;
 }
 
 .section div:first-of-type{
@@ -139,6 +140,46 @@
   background-color: #242424;
   flex: 1;
 }
+
+.folders-container-main{
+  height: 100%;
+  position: relative;
+}
+
+.new-folder-btn-container{
+  position: absolute;
+  bottom: 0;
+  width: calc(25% - 1.5em);
+  display: grid;
+  place-items: center;
+  padding-bottom: 1em;
+}
+
+.new-folder-btn{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #fefefe;
+  cursor: pointer;
+  transition: opacity var(--animation-time) ease;
+  opacity: 0.9;
+}
+
+.new-folder-btn:hover {
+  opacity: 1;
+}
+
+.plus-icon {
+  font-weight: bold; /* Makes the plus sign bolder */
+  user-select: none;
+}
+
 
 .folder-container{
   background-color: #1B1B1B;
@@ -169,6 +210,7 @@
   height: 2.5em;
   transition: all var(--animation-time) ease;
   cursor: pointer;
+  user-select: none;
 }
 
 .folder-item:hover {
@@ -219,6 +261,7 @@
   border-radius: 15px;
   margin-bottom: 1em;
   cursor: pointer;
+  user-select: none;
 }
 
 .note-item:hover{

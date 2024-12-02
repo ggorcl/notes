@@ -4,12 +4,15 @@ import { ToggleButton } from "./components/ToggleButton";
 import { Folders } from "./components/Folders";
 import { Folder } from "./components/Folder";
 import { Note } from "./components/Note";
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from './redux/store'
+import { addFolder } from "./redux/dataSlice";
+import { NewFolderButton } from "./components/NewFolderButton";
 
 function App() {
   const primaryColor = useSelector((state: RootState) => state.primaryColor)
   const [allFoldersVisible, setAllFoldersVisible] = useState(true);
+  const dispatch = useDispatch()
 
   const toggleAllFoldersVisiblity = () => {
     setAllFoldersVisible((prev) => !prev);
@@ -27,6 +30,9 @@ function App() {
         className="folders-container section"
       >
         <Folders />
+        <div className="new-folder-btn-container">
+          <NewFolderButton />
+        </div>
       </div>
       <div className="folder-container section" style={allFoldersVisible ? { width: "25%", left: "25%" } : { width: "30%", left: "0" }}>
         <Folder />
