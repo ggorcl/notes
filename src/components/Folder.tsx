@@ -10,7 +10,7 @@ export function Folder() {
       {dataSlice && dataSlice[selectedFolder] && dataSlice[selectedFolder].length !== 0 ?
         dataSlice[selectedFolder]?.map((element, index) => {
           return (
-            <NoteItem key={`note-item-0${index}`} time={"9:16 PM"} title={element.title} content={element.content} index={index} />
+            <NoteItem key={`note-item-0${index}`} time={element.time} title={element.title} content={element.content} index={index} />
 
           );
         }) : <div className="no-notes">No Notes</div>}

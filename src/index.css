@@ -146,16 +146,25 @@
   position: relative;
 }
 
-.new-folder-btn-container{
+.generic-btn-container{
   position: absolute;
   bottom: 0;
-  width: calc(25% - 1.5em);
   display: grid;
   place-items: center;
   padding-bottom: 1em;
 }
 
-.new-folder-btn{
+.new-folder-btn-container{
+  width: calc(25% - 1.5em);
+}
+
+.new-note-btn-container{
+  position: absolute;
+  right: 0; 
+  margin-right: 1em;
+}
+
+.generic-btn{
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -171,11 +180,11 @@
   opacity: 0.9;
 }
 
-.new-folder-btn:hover {
+.generic-btn:hover {
   opacity: 1;
 }
 
-.plus-icon {
+.generic-btn-icon {
   font-weight: bold; /* Makes the plus sign bolder */
   user-select: none;
 }

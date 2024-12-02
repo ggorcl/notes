@@ -21,7 +21,7 @@ export function NoteItem({ title, time, content, index }: NoteItemProps) {
         <span className="note-item-time">
           {time}
         </span>
-        <span className="note-item-content" style={{ color: "#fefefe", opacity: 0.6 }}>{content.slice(0, 10)} ...</span>
+        <span className="note-item-content" style={{ color: "#fefefe", opacity: 0.6 }}>{content ? content.slice(0, 10) : "No additional text"} ...</span>
       </span>
     </div>
   );

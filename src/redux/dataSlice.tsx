@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, current, PayloadAction } from '@reduxjs/toolkit';
 
 interface Note {
   time: string;
@@ -8,20 +8,7 @@ interface Note {
 
 const initialState: { [key: string]: Note[] } = {
   "New Folder 1": [
-
-  ],
-  "folder2": [
-    {
-      time: "11:00 AM",
-      title: "page title 2-1",
-      content: "abcds dfsdf bcdsdfsdf\nabcdsdfsdfabcdsdfsdf",
-    },
-    {
-      time: "1:00 AM",
-      title: "page title 2-2",
-      content: "abdfg",
-    },
-  ],
+  ]
 };
 
 const dataSlice = createSlice({
@@ -37,9 +24,25 @@ const dataSlice = createSlice({
     addFolder: (state, action: PayloadAction<void>) => {
       const totalFolders = Object.keys(state).length;
       state[`New Folder ${totalFolders + 1}`] = []
+    },
+    renameFolder: (state, action: PayloadAction<{ currentFolderName: string, newFolderName: string }>) => {
+      const { currentFolderName, newFolderName } = action.payload;
+      if (!state[currentFolderName]) return;
+      const { [currentFolderName]: removedFolder, ...rest } = state;
+      const newState = { ...rest, [newFolderName]: removedFolder };
+      return newState;
+    },
+    addNote: (state, action: PayloadAction<{ folderName: string }>) => {
+      const { folderName } = action.payload;
+      if (!state[folderName]) return;
+      state[folderName].push({
+        title: "New Note",
+        time: new Date().toDateString(),
+        content: ""
+      })
     }
   },
 });
 
-export const { updateDataSlice, addFolder } = dataSlice.actions;
+export const { updateDataSlice, addFolder, renameFolder, addNote } = dataSlice.actions;
 export default dataSlice.reducer;
