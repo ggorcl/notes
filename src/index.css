@@ -190,6 +190,15 @@
   left: 25%;
 }
 
+.no-notes{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  user-select: none;
+  font-weight: bold;
+}
+
 .note-container{
   background-color: #1E1E1E;
   position: absolute;

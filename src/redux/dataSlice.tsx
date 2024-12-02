@@ -7,17 +7,8 @@ interface Note {
 }
 
 const initialState: { [key: string]: Note[] } = {
-  folder1: [
-    {
-      time: "10:00 AM",
-      title: "page title 1-1",
-      content: "hello hellohe\nllohellohellohellohellohello ",
-    },
-    {
-      time: "12:00 AM",
-      title: "page title 1-2",
-      content: "abdfg",
-    },
+  "New Folder 1": [
+
   ],
   folder2: [
     {
