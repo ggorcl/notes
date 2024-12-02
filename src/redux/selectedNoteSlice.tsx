@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
-const selectedNoteSlice = createSlice({
-  name: 'selectedNote',
+const selectedNoteIndexSlice = createSlice({
+  name: 'selectedNoteIndex',
   initialState: 0,
   reducers: {
-    setSelectedNote: (state, action) => {
+    setSelectedNoteIndex: (state, action) => {
       return action.payload;
     },
   },
 });
 
-export const { setSelectedNote } = selectedNoteSlice.actions;
-export default selectedNoteSlice.reducer;
+export const { setSelectedNoteIndex } = selectedNoteIndexSlice.actions;
+export default selectedNoteIndexSlice.reducer;

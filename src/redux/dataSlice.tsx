@@ -10,7 +10,7 @@ const initialState: { [key: string]: Note[] } = {
   "New Folder 1": [
 
   ],
-  folder2: [
+  "folder2": [
     {
       time: "11:00 AM",
       title: "page title 2-1",

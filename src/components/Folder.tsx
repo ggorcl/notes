@@ -5,8 +5,6 @@ import { RootState } from "../redux/store";
 export function Folder() {
   const selectedFolder = useSelector((state: RootState) => state.selectedFolder);
   const dataSlice = useSelector((state: RootState) => state.dataSlice);
-  console.log(dataSlice)
-  console.log(dataSlice[selectedFolder])
   return (
     <div style={{ height: "100%" }}>
       {dataSlice && dataSlice[selectedFolder] && dataSlice[selectedFolder].length !== 0 ?
