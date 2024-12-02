@@ -28,6 +28,7 @@
   overflow: hidden;
   display: flex;
   position: relative;
+  transition: all var(--animation-time) ease;
 }
 
 #top-bar{
